@@ -24,8 +24,8 @@ void setup()
 
     // Setting up default values for maximum speed and maximum acceleration
     Serial.println("Default speed: 400 steps/s, default acceleration: 800 steps/s^2.");
-    stepperX.setMaxSpeed(400); // Speed = Steps / second
-    stepperX.setAcceleration(800); // Acceleration = Steps /(second)^2
+    stepperX.setMaxSpeed(64000); // Speed = Steps / second
+    stepperX.setAcceleration(8000); // Acceleration = Steps /(second)^2
 
     stepperY.setMaxSpeed(64000); // Speed = Steps / second
     stepperY.setAcceleration(8000); // Acceleration = Steps /(second)^2
@@ -80,7 +80,7 @@ void checkSerial()
         {
             switch (receivedCommand)
             {
-            case 'U': // Rotate in a positive (clockwise) direction for X-axis
+            case 'E': // Rotate in a positive (clockwise) direction for X-axis
                 receivedSteps = Serial.parseFloat();
                 receivedSpeed = Serial.parseFloat();
                 directionMultiplierX = 1;
@@ -88,7 +88,7 @@ void checkSerial()
                 RotateRelativeX();
                 break;
 //200steps for 1cm, 800cm 
-            case 'D': // Rotate in a negative (counter-clockwise) direction for X-axis
+            case 'R': // Rotate in a negative (counter-clockwise) direction for X-axis
                 receivedSteps = Serial.parseFloat();
                 receivedSpeed = Serial.parseFloat();
                 directionMultiplierX = -1;
@@ -96,7 +96,7 @@ void checkSerial()
                 RotateRelativeX();
                 break;
 
-            case 'R': // Rotate in a positive (clockwise) direction for Y-axis
+            case 'D': // Rotate in a positive (clockwise) direction for Y-axis
                 receivedSteps = Serial.parseFloat();
                 receivedSpeed = Serial.parseFloat();
                 directionMultiplierY = 1;
@@ -104,7 +104,7 @@ void checkSerial()
                 RotateRelativeY(); //Q100
                 break;
 
-            case 'E': // Rotate in a negative (counter-clockwise) direction for Y-axis
+            case 'U': // Rotate in a negative (counter-clockwise) direction for Y-axis
                 receivedSteps = Serial.parseFloat();
                 receivedSpeed = Serial.parseFloat();
                 directionMultiplierY = -1;
@@ -180,7 +180,7 @@ void GoHomeX()
     else
     {
         Serial.println("X-axis is goimg to the home position.");
-        stepperX.setMaxSpeed(400); // Set speed for X-axis
+        stepperX.setMaxSpeed(6400); // Set speed for X-axis
         stepperX.moveTo(0); // Set absolute distance to move for X-axis
     }
 }
