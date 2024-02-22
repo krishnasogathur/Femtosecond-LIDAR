@@ -1,0 +1,5 @@
+t_acq: 1 seconds
+rep rate = 3000.0kHz
+laser power = 120mW
+bin width = 200.0ps
+avg noise count = 2000 per second
