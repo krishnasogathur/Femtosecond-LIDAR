@@ -1,0 +1,24 @@
+25 April 2024: 
+
+Goal of today's experiment:
+
+-  now that motion has been figured out, I want to see what the difference is between fast and slow scanning approaches (as in how it's able to capture curvature)
+- to do this, I will scan it at different speeds0.5 cm/s and 0.1cm/s (I don't think 1cm/s is actually 1)
+
+- time of acquisition remains 1 second. maybe for 0.5cm/s we can make t_acq as 0.5 seconds. Interestingly enough it doesn't look like the added delay is necessary as motion is completely smooth regardless. so I'm going to try this out first for 2x speeds and 2x acq times on our aluminium object.
+
+
+Update 1:
+
+Laptop switched off and experiment stopped in between the first expt (0.5cm/s, 1sec acq). Ran for about 40 minutes, and covered roughly 8-9cm in y direction. Did acquire 67 y arrays out of 70. (yres = 0.2 cm)
+
+
+Next experiment - 0.5 cm/s but 0.1 acq. But this time I'll reduce dimensions from 14x14 to like 14 x 5 maybe. at the same resolution. (not 14x5, rather like 14x2.4 or something. figure out from array lengths.)
+
+
+
+some observations: 
+- with 0.1sec tacq, delay = 0 causes irregular mechanical motion. This suggests that data transmission requires little more time in this case?
+- with 1 second I set delay = 0 and it ran fairly smoothly.
+- with 0.1sec, at 0.05 sec delay it appears to be running smoothly also. Will have to look at data for a better understanding. 
+- just for greater clarity, I will also collect dataset by introducing a 0.1 second delay and see how well that fairs.
